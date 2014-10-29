@@ -1,0 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<artifactId>ngbf-dev</artifactId>
+		<groupId>com.kingstar.ngbf</groupId>
+		<version>1.0.0.0</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.coo</groupId>
+	<artifactId>coo-s-vote-model</artifactId>
+	<version>0.7.0.0</version>
+	<name>coo-s-vote-model</name>
+	<description>coo-s-vote-model for git</description>
+
+	<dependencies>
+		<!-- 无依赖,不能依赖s-util,M端引用此包 -->
+	</dependencies>
+
+</project>
