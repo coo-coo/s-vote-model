@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 仅仅是作为静态的频道,由系统Admin来定义,对应于c.type.xxx
+ * 仅仅是作为静态的频道,由系统Admin来定义,对应于c.type.xxx TODO 备用表
  */
 public class Channel extends BasicObject {
 
@@ -41,13 +41,6 @@ public class Channel extends BasicObject {
 	 * @since 0.1.1.0
 	 */
 	public Channel(String code, String label) {
-		this.code = code;
-		this.label = label;
-		this.icon = "icon_" + code + ".png";
-	}
-
-	public Channel(String _id, String code, String label) {
-		this._id = _id;
 		this.code = code;
 		this.label = label;
 		this.icon = "icon_" + code + ".png";

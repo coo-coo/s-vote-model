@@ -9,9 +9,19 @@ package com.coo.s.vote.model;
  * @since 0.1.0.0
  */
 
-public class Account extends BasicItem {
+public class Account extends BasicObject {
 
 	public static String C_NAME = "vote_account";
+
+	@Column(name = "mobile", label = "手机号")
+	private String mobile = "";
+
+	@Column(name = "password", label = "密码")
+	private String password = "";
+
+	// 0：一般账号；1：系统账号；2：管理员帐号；3：测试账号
+	@Column(name = "type", label = "账号类型")
+	private String type = "0";
 
 	/**
 	 * 
@@ -43,16 +53,6 @@ public class Account extends BasicItem {
 	protected Status[] getStatusArray() {
 		return new Status[] { STATUS_VALID, STATUS_LOCKED, STATUS_DELETED };
 	}
-
-	@Column(name = "mobile", label = "手机号")
-	private String mobile = "";
-
-	@Column(name = "password", label = "密码")
-	private String password = "";
-
-	// 0：一般账号；1：系统账号；2：管理员帐号；3：测试账号
-	@Column(name = "type", label = "账号类型")
-	private String type = "0";
 
 	/**
 	 * 构造函数

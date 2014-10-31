@@ -8,30 +8,24 @@ package com.coo.s.vote.model;
  * @since 0.6.2.0
  */
 
-public class JobLog extends BasicItem{
+public class Log extends BasicObject{
 
-	public static String C_NAME = "vote_job";
+	public static String C_NAME = "vote_log";
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -6785637087835797157L;
 	
-	/**
-	 * Job名称,类全名,用于查找上一次的执行时间
-	 */
 	@Column(name = "name", label = "名称")
 	private String name ="";
 	
-	/**
-	 * 开始(执行)时间戳：很多后续的数据是以此信息作为分割的
-	 */
 	@Column(name = "start_ts", label = "开始(执行)时间戳")
 	private Long startTs = 0l;
 	
-	/**
-	 * 结束时间戳
-	 */
+	@Column(name = "type", label = "类别:JOB|等")
+	private String type ="";
+	
 	@Column(name = "end_ts", label = "结束时间戳")
 	private Long endTs = 0l;
 	
@@ -83,4 +77,21 @@ public class JobLog extends BasicItem{
 	public void setEndTs(long endTs) {
 		this.endTs = endTs;
 	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public void setStartTs(Long startTs) {
+		this.startTs = startTs;
+	}
+
+	public void setEndTs(Long endTs) {
+		this.endTs = endTs;
+	}
+	
 }

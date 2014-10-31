@@ -9,7 +9,7 @@ package com.coo.s.vote.model;
  * @since 0.1.2.0
  */
 
-public class Vote extends BasicItem {
+public class Vote extends BasicObject {
 
 	public static String C_NAME = "vote_vote";
 
@@ -18,24 +18,22 @@ public class Vote extends BasicItem {
 	@Column(name = "topic_id")
 	private String topicId = "";
 
-	// "0","1"……
-	@Column(name = "leg_seq", label = "Leg序号")
+	@Column(name = "leg_seq", label = "Leg序号:0,1……")
 	private String legSeq = "";
 
 	@Column(name = "voter", label = "投票人账号")
 	private String voter = "";
 
+	public final static Status STATUS_VALID = new Status(0, "有效");
 
-	public final static Status STATUS_VALID = new Status(0,"有效");
-	
-	public final static Status STATUS_COUNTED = new Status(5,"已统计");
-	
-	public final static Status STATUS_INVALID = new Status(9,"无效");
+	public final static Status STATUS_COUNTED = new Status(5, "已统计");
+
+	public final static Status STATUS_INVALID = new Status(9, "无效");
 
 	protected Status[] getStatusArray() {
 		return new Status[] { STATUS_VALID, STATUS_INVALID, STATUS_INVALID };
 	}
-	
+
 	public String getLegSeq() {
 		return legSeq;
 	}
@@ -51,7 +49,7 @@ public class Vote extends BasicItem {
 	public void setVoter(String voter) {
 		this.voter = voter;
 	}
-	
+
 	/**
 	 * @return the topicId
 	 */

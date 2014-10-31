@@ -18,46 +18,44 @@ public abstract class BasicObject implements java.io.Serializable {
 	 */
 	private static final long serialVersionUID = 6121507204868751924L;
 
-	/**
-	 * Mongo主键ID,如果是null，则表示该对象未被实例化，参加业务计算
-	 * 
-	 * @since 0.1.2.0
-	 */
+	@Column(name = "_id", label = "Mongo主键ID,如果是null，则表示该对象未被实例化，参加业务计算")
 	protected String _id = null;
 
-	/**
-	 * 系统数据生成时间戳:参见MongoItem
-	 * 
-	 * @since 0.1.2.0
-	 */
+	@Column(name = "_tsi", label = "系统数据生成时间戳:参见MongoItem")
 	public long _tsi = -1;
-	/**
-	 * 系统数据的更新时间戳:参见MongoItem
-	 * 
-	 * @since 0.1.2.0
-	 */
+
+	@Column(name = "_tsu", label = "系统数据的更新时间戳:参见MongoItem")
 	public long _tsu = -1;
+
+	@Column(name = "owner", label = "拥有者账号：对应M端的HOST")
+	protected String owner = "";
+
+	@Column(name = "owner_id", label = "拥有者账号ID,关联Account表中的_id")
+	protected String ownerId = "";
+
+	@Column(name = "updater", label = "数据更新者账号")
+	protected String updater = "";
+
+	@Column(name = "status", label = "状态=0，缺省值")
+	protected Integer status = 0;
+
+	/**
+	 * StatusMap
+	 */
+	protected static Map<Integer, Status> statusMap = new HashMap<Integer, Status>();
 
 	/**
 	 * 一般的参数，不涉及业务计算的属性信息，存储于此
-	 * 
-	 * @since 0.1.2.0
 	 */
 	protected Map<String, Object> attrs = new HashMap<String, Object>();
 
 	/**
 	 * 支持是否选中...
-	 * 
-	 * @since 0.5.2.0
 	 */
 	protected boolean selected = Boolean.FALSE;
 
 	/**
 	 * 放置属性信息
-	 * 
-	 * @since 0.1.2.0
-	 * @param key
-	 * @param value
 	 */
 	public BasicObject put(String key, Object value) {
 		attrs.put(key, value);
@@ -135,6 +133,72 @@ public abstract class BasicObject implements java.io.Serializable {
 			}
 		}
 		return map;
+	}
+
+	/**
+	 * 返回Status的Label
+	 */
+	public String getStatusLabel() {
+		String label = "";
+		for (Status s : getStatusArray()) {
+			if (s.code.intValue() == status.intValue()) {
+				label = s.label;
+				break;
+			}
+		}
+		return label;
+	}
+
+	/**
+	 * 重载状态数组
+	 */
+	protected Status[] getStatusArray() {
+		return new Status[0];
+	}
+
+	/**
+	 * @return the owner
+	 */
+	public String getOwner() {
+		return owner;
+	}
+
+	/**
+	 * @param owner
+	 *            the owner to set
+	 */
+	public void setOwner(String owner) {
+		this.owner = owner;
+	}
+
+	/**
+	 * @return the updater
+	 */
+	public String getUpdater() {
+		return updater;
+	}
+
+	/**
+	 * @param updater
+	 *            the updater to set
+	 */
+	public void setUpdater(String updater) {
+		this.updater = updater;
+	}
+
+	/**
+	 * @return the ownerId
+	 */
+	public String getOwnerId() {
+		return ownerId;
+	}
+
+	/**
+	 * @param ownerId
+	 *            the ownerId to set
+	 */
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
 	}
 
 }

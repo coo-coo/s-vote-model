@@ -1,6 +1,5 @@
 package com.coo.s.vote.model;
 
-
 /**
  * 反馈信息
  * 
@@ -10,12 +9,12 @@ package com.coo.s.vote.model;
  * @since 0.1.7.0
  */
 
-public class Feedback extends BasicItem {
-
-	public static String C_NAME = "vote_feedback";
+public class Feedback extends BasicObject {
 
 	private static final long serialVersionUID = -3976410079555818395L;
 
+	public static String C_NAME = "vote_feedback";
+	
 	@Column(name = "note", label = "反馈信息")
 	private String note = "";
 
@@ -24,13 +23,12 @@ public class Feedback extends BasicItem {
 
 	@Override
 	protected Status[] getStatusArray() {
-		return new Status[]{STATUS_UNSOLVED,STATUS_SOLVED};
+		return new Status[] { STATUS_UNSOLVED, STATUS_SOLVED };
 	}
-	
-	public static Status STATUS_UNSOLVED = new Status(0,"未处理");
-	public static Status STATUS_SOLVED = new Status(1,"已处理");
-	
-	
+
+	public static Status STATUS_UNSOLVED = new Status(0, "未处理");
+	public static Status STATUS_SOLVED = new Status(1, "已处理");
+
 	public String getNote() {
 		return note;
 	}

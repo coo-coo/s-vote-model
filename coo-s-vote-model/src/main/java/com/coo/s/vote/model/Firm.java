@@ -1,9 +1,9 @@
 package com.coo.s.vote.model;
 
 /**
- * 企业账号,用于商业行为，类似于Channel,对应Topic为c.firm.xxx
+ * TODO 企业账号,用于商业行为，类似于Channel,对应Topic为c.firm.xxx
  */
-public class Firm extends BasicItem {
+public class Firm extends BasicObject {
 
 	/**
 	 * 
@@ -39,9 +39,6 @@ public class Firm extends BasicItem {
 	@Column(name = "icon", label = "图标")
 	private String icon = "";
 
-	@Column(name = "status", label = "状态")
-	private Integer status = 0;
-
 	public String getLabel() {
 		return label;
 	}
@@ -64,13 +61,5 @@ public class Firm extends BasicItem {
 
 	public void setIcon(String icon) {
 		this.icon = icon;
-	}
-
-	public int getStatus() {
-		return status;
-	}
-
-	public void setStatus(int status) {
-		this.status = status;
 	}
 }

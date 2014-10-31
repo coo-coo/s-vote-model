@@ -9,7 +9,7 @@ import java.util.List;
  * @author boqing.shen
  * @since 0.6.0.0
  */
-public class Topic extends BasicItem {
+public class Topic extends BasicObject {
 
 	public static String C_NAME = "vote_topic";
 
