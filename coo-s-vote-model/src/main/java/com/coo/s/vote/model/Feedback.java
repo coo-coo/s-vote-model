@@ -21,10 +21,10 @@ public class Feedback extends BasicObject {
 	@Column(name = "app_version", label = "版本信息")
 	private String appVersion = "";
 
-	@Override
-	protected Status[] getStatusArray() {
-		return new Status[] { STATUS_UNSOLVED, STATUS_SOLVED };
-	}
+//	@Override
+//	protected Status[] getStatusArray() {
+//		return new Status[] { STATUS_UNSOLVED, STATUS_SOLVED };
+//	}
 
 	public static Status STATUS_UNSOLVED = new Status(0, "未处理");
 	public static Status STATUS_SOLVED = new Status(1, "已处理");
@@ -35,10 +35,6 @@ public class Feedback extends BasicObject {
 
 	public void setNote(String note) {
 		this.note = note;
-	}
-
-	public int getStatus() {
-		return status;
 	}
 
 	public void setStatus(int status) {

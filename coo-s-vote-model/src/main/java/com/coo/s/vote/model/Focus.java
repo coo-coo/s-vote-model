@@ -52,8 +52,8 @@ public class Focus extends BasicObject {
 	@Column(name = "period", label = "周期,单位(天)")
 	private Integer period = 1;
 
-	@Column(name = "status", label = "状态，0:有效；1:无效")
-	private Integer status = STATUS_VALID;
+//	@Column(name = "status", label = "状态，0:有效；1:无效")
+//	private Integer status = STATUS_VALID;
 
 	public String getType() {
 		return type;
@@ -63,13 +63,7 @@ public class Focus extends BasicObject {
 		this.type = type;
 	}
 
-	public int getStatus() {
-		return status;
-	}
-
-	public void setStatus(int status) {
-		this.status = status;
-	}
+	
 
 	/**
 	 * @return the subject

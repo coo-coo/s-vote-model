@@ -54,10 +54,7 @@ public class Channel extends BasicObject {
 
 	@Column(name = "icon", label = "图标")
 	private String icon = "";
-
-	@Column(name = "status", label = "移动端状态")
-	private Integer status = TYPE_UNFOCUS;
-
+	
 	/**
 	 * 获得所属范围内的TopicShot列表
 	 * 
@@ -106,13 +103,5 @@ public class Channel extends BasicObject {
 
 	public void setIcon(String icon) {
 		this.icon = icon;
-	}
-
-	public int getStatus() {
-		return status;
-	}
-
-	public void setStatus(int status) {
-		this.status = status;
 	}
 }

@@ -41,6 +41,7 @@ public abstract class BasicObject implements java.io.Serializable {
 
 	/**
 	 * StatusMap
+	 * @deprecated
 	 */
 	protected static Map<Integer, Status> statusMap = new HashMap<Integer, Status>();
 
@@ -62,18 +63,18 @@ public abstract class BasicObject implements java.io.Serializable {
 		return this;
 	}
 
-	/**
-	 * 该对象是否已经落地,即(Mongo)数据库中有该对应对象
-	 * 
-	 * @since 0.1.2.0
-	 * @return
-	 */
-	public boolean isPersisted() {
-		if (_id == null) {
-			return false;
-		}
-		return true;
-	}
+//	/**
+//	 * 该对象是否已经落地,即(Mongo)数据库中有该对应对象
+//	 * @deprecated
+//	 * @since 0.1.2.0
+//	 * @return
+//	 */
+//	public boolean isPersisted() {
+//		if (_id == null) {
+//			return false;
+//		}
+//		return true;
+//	}
 
 	public String get_id() {
 		return _id;
@@ -114,6 +115,14 @@ public abstract class BasicObject implements java.io.Serializable {
 	public void setSelected(boolean selected) {
 		this.selected = selected;
 	}
+	
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
 
 	/**
 	 * 根据一个类对象,获得其Column注解,生成colName:fieldName的Map
@@ -137,24 +146,26 @@ public abstract class BasicObject implements java.io.Serializable {
 
 	/**
 	 * 返回Status的Label
+	 * 直接转
 	 */
-	public String getStatusLabel() {
-		String label = "";
-		for (Status s : getStatusArray()) {
-			if (s.code.intValue() == status.intValue()) {
-				label = s.label;
-				break;
-			}
-		}
-		return label;
-	}
+//	public String getStatusLabel() {
+//		String label = null;
+//		for (Status s : getStatusArray()) {
+//			if (s.code.intValue() == status.intValue()) {
+//				label = s.label;
+//				break;
+//			}
+//		}
+//		return label;
+//	}
 
-	/**
-	 * 重载状态数组
-	 */
-	protected Status[] getStatusArray() {
-		return new Status[0];
-	}
+//	/**
+//	 * 重载状态数组
+//	 * @deprecated
+//	 */
+//	protected Status[] getStatusArray() {
+//		return new Status[0];
+//	}
 
 	/**
 	 * @return the owner

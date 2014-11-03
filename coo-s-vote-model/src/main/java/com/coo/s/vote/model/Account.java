@@ -44,7 +44,7 @@ public class Account extends BasicObject {
 	 */
 	public static final String TYPE_TEST = "3";
 
-	public static Status STATUS_VALID = new Status(0, "已注册");
+	public static Status STATUS_VALID = new Status(1, "已注册");
 
 	public static Status STATUS_LOCKED = new Status(5, "已锁定");
 
