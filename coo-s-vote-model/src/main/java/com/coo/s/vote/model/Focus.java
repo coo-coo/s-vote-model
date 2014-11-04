@@ -27,7 +27,6 @@ public class Focus extends BasicObject {
 	 * 类型:Topic: 表示Account对某一个Topic进行了关注
 	 */
 	public static final String TYPE_TOPIC = "TOPIC";
-
 	/**
 	 * 状态：有效
 	 */

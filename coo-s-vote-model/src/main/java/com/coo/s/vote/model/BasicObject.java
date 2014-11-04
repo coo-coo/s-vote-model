@@ -18,63 +18,65 @@ public abstract class BasicObject implements java.io.Serializable {
 	 */
 	private static final long serialVersionUID = 6121507204868751924L;
 
-	@Column(name = "_id", label = "Mongo主键ID,如果是null，则表示该对象未被实例化，参加业务计算")
+	// @Column(name = "_id", label = "Mongo主键ID,如果是null，则表示该对象未被实例化，参加业务计算")
 	protected String _id = null;
 
-	@Column(name = "_tsi", label = "系统数据生成时间戳:参见MongoItem")
+	// @Column(name = "_tsi", label = "系统数据生成时间戳:参见MongoItem")
 	public long _tsi = -1;
 
-	@Column(name = "_tsu", label = "系统数据的更新时间戳:参见MongoItem")
+	// @Column(name = "_tsu", label = "系统数据的更新时间戳:参见MongoItem")
 	public long _tsu = -1;
 
 	@Column(name = "owner", label = "拥有者账号：对应M端的HOST")
-	protected String owner = "";
+	protected String owner = null;
 
 	@Column(name = "owner_id", label = "拥有者账号ID,关联Account表中的_id")
-	protected String ownerId = "";
+	protected String ownerId = null;
 
 	@Column(name = "updater", label = "数据更新者账号")
-	protected String updater = "";
+	protected String updater = null;
 
 	@Column(name = "status", label = "状态=0，缺省值")
 	protected Integer status = 0;
 
-	/**
-	 * StatusMap
-	 * @deprecated
-	 */
-	protected static Map<Integer, Status> statusMap = new HashMap<Integer, Status>();
+	// /**
+	// * StatusMap
+	// *
+	// * @deprecated
+	// */
+	// protected static Map<Integer, Status> statusMap = new HashMap<Integer,
+	// Status>();
 
 	/**
 	 * 一般的参数，不涉及业务计算的属性信息，存储于此
 	 */
-	protected Map<String, Object> attrs = new HashMap<String, Object>();
+	// protected Map<String, Object> attrs = new HashMap<String, Object>();
 
 	/**
 	 * 支持是否选中...
 	 */
 	protected boolean selected = Boolean.FALSE;
 
-	/**
-	 * 放置属性信息
-	 */
-	public BasicObject put(String key, Object value) {
-		attrs.put(key, value);
-		return this;
-	}
+	// /**
+	// * 放置属性信息
+	// */
+	// public BasicObject put(String key, Object value) {
+	// attrs.put(key, value);
+	// return this;
+	// }
 
-//	/**
-//	 * 该对象是否已经落地,即(Mongo)数据库中有该对应对象
-//	 * @deprecated
-//	 * @since 0.1.2.0
-//	 * @return
-//	 */
-//	public boolean isPersisted() {
-//		if (_id == null) {
-//			return false;
-//		}
-//		return true;
-//	}
+	// /**
+	// * 该对象是否已经落地,即(Mongo)数据库中有该对应对象
+	// * @deprecated
+	// * @since 0.1.2.0
+	// * @return
+	// */
+	// public boolean isPersisted() {
+	// if (_id == null) {
+	// return false;
+	// }
+	// return true;
+	// }
 
 	public String get_id() {
 		return _id;
@@ -100,13 +102,13 @@ public abstract class BasicObject implements java.io.Serializable {
 		this._tsu = _tsu;
 	}
 
-	public Map<String, Object> getAttrs() {
-		return attrs;
-	}
-
-	public void setAttrs(Map<String, Object> attrs) {
-		this.attrs = attrs;
-	}
+	// public Map<String, Object> getAttrs() {
+	// return attrs;
+	// }
+	//
+	// public void setAttrs(Map<String, Object> attrs) {
+	// this.attrs = attrs;
+	// }
 
 	public boolean isSelected() {
 		return selected;
@@ -115,7 +117,7 @@ public abstract class BasicObject implements java.io.Serializable {
 	public void setSelected(boolean selected) {
 		this.selected = selected;
 	}
-	
+
 	public Integer getStatus() {
 		return status;
 	}
@@ -145,27 +147,26 @@ public abstract class BasicObject implements java.io.Serializable {
 	}
 
 	/**
-	 * 返回Status的Label
-	 * 直接转
+	 * 返回Status的Label 直接转
 	 */
-//	public String getStatusLabel() {
-//		String label = null;
-//		for (Status s : getStatusArray()) {
-//			if (s.code.intValue() == status.intValue()) {
-//				label = s.label;
-//				break;
-//			}
-//		}
-//		return label;
-//	}
+	// public String getStatusLabel() {
+	// String label = null;
+	// for (Status s : getStatusArray()) {
+	// if (s.code.intValue() == status.intValue()) {
+	// label = s.label;
+	// break;
+	// }
+	// }
+	// return label;
+	// }
 
-//	/**
-//	 * 重载状态数组
-//	 * @deprecated
-//	 */
-//	protected Status[] getStatusArray() {
-//		return new Status[0];
-//	}
+	// /**
+	// * 重载状态数组
+	// * @deprecated
+	// */
+	// protected Status[] getStatusArray() {
+	// return new Status[0];
+	// }
 
 	/**
 	 * @return the owner

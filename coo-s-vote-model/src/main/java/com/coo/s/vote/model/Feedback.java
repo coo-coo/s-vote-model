@@ -20,14 +20,9 @@ public class Feedback extends BasicObject {
 
 	@Column(name = "app_version", label = "版本信息")
 	private String appVersion = "";
-
-//	@Override
-//	protected Status[] getStatusArray() {
-//		return new Status[] { STATUS_UNSOLVED, STATUS_SOLVED };
-//	}
-
-	public static Status STATUS_UNSOLVED = new Status(0, "未处理");
-	public static Status STATUS_SOLVED = new Status(1, "已处理");
+	
+	public static int STATUS_UNSOLVED = 0;	// "未处理");
+	public static int STATUS_SOLVED = 1;	// "已处理");
 
 	public String getNote() {
 		return note;

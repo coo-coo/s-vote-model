@@ -5,6 +5,7 @@ package com.coo.s.vote.model;
  * @author boqing.shen
  * @date 2014-9-30 下午3:53:01
  * @since 1.0.0.0
+ * @deprecated 
  */
 
 public final class Status {

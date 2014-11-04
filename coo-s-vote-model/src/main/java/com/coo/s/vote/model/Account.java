@@ -44,16 +44,10 @@ public class Account extends BasicObject {
 	 */
 	public static final String TYPE_TEST = "3";
 
-	public static Status STATUS_VALID = new Status(1, "已注册");
-
-	public static Status STATUS_LOCKED = new Status(5, "已锁定");
-
-	public static Status STATUS_DELETED = new Status(9, "已删除");
-
-	protected Status[] getStatusArray() {
-		return new Status[] { STATUS_VALID, STATUS_LOCKED, STATUS_DELETED };
-	}
-
+	public static int STATUS_VALID = 1;	//已注册
+	public static int STATUS_LOCKED = 5; // 已锁定
+	public static int STATUS_DELETED = 9; //已删除
+	
 	/**
 	 * 构造函数
 	 */

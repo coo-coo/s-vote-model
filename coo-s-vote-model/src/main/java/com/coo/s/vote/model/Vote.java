@@ -24,15 +24,15 @@ public class Vote extends BasicObject {
 	@Column(name = "voter", label = "投票人账号")
 	private String voter = "";
 
-	public final static Status STATUS_VALID = new Status(0, "有效");
+	public final static int STATUS_VALID = 0;//new Status(0, "有效");
 
-	public final static Status STATUS_COUNTED = new Status(5, "已统计");
+	public final static int STATUS_COUNTED = 5;//new Status(5, "已统计");
 
-	public final static Status STATUS_INVALID = new Status(9, "无效");
+	public final static int STATUS_INVALID = 9;//new Status(9, "无效");
 
-	protected Status[] getStatusArray() {
-		return new Status[] { STATUS_VALID, STATUS_INVALID, STATUS_INVALID };
-	}
+//	protected Status[] getStatusArray() {
+//		return new Status[] { STATUS_VALID, STATUS_INVALID, STATUS_INVALID };
+//	}
 
 	public String getLegSeq() {
 		return legSeq;

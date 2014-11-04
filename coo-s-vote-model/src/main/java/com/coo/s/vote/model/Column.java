@@ -26,7 +26,7 @@ public @interface Column {
 	/**
 	 * 数据库字段名称
 	 */
-	public String name();
+	public String name() default "";
 	/**
 	 * 字段注释，用于编程理解
 	 */

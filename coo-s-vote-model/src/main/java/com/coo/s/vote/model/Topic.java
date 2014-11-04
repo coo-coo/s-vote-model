@@ -31,15 +31,11 @@ public class Topic extends BasicObject {
 	private Long snapshot = 0l;
 
 	@Column(name = "channels", label = "所属频道tiyu,yinyue")
-	private String channels;
+	private String channels = null;
 
-	public static Status STATUS_VALID = new Status(0, "有效");
-	public static Status STATUS_LOCKED = new Status(5, "锁定");
-	public static Status STATUS_INVALID = new Status(9, "无效");
-
-	protected Status[] getStatusArray() {
-		return new Status[] { STATUS_VALID, STATUS_LOCKED, STATUS_INVALID };
-	}
+	public static int STATUS_VALID = 0;// new Status(0, "有效");
+	public static int STATUS_LOCKED = 5;// new Status(5, "锁定");
+	public static int STATUS_INVALID = 9;// new Status(9, "无效");
 
 	/**
 	 * 判断Topic的一个实例，是否是和一个账号进行了绑定，即账号已经投过Topic了 采用Focus来描述投票关系式，类型是:VOTE
