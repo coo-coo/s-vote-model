@@ -3,12 +3,15 @@ package com.coo.s.vote.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.coo.s.cloud.model.BasicObject;
+import com.coo.s.cloud.model.Column;
+
 /**
  * 仅仅是作为静态的频道,由系统Admin来定义,对应于c.type.xxx TODO 备用表
  */
 public class Channel extends BasicObject {
 
-	public static String C_NAME = "vote_channel";
+	public static String SET = "vote_channel";
 	/**
 	 * 已被关注
 	 * 
@@ -54,7 +57,7 @@ public class Channel extends BasicObject {
 
 	@Column(name = "icon", label = "图标")
 	private String icon = "";
-	
+
 	/**
 	 * 获得所属范围内的TopicShot列表
 	 * 

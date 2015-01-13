@@ -1,5 +1,8 @@
 package com.coo.s.vote.model;
 
+import com.coo.s.cloud.model.BasicObject;
+import com.coo.s.cloud.model.Column;
+
 /**
  * 主题的每一个选项的投票信息
  * 
@@ -18,7 +21,7 @@ public class TopicLeg extends BasicObject {
 
 	@Column(name = "leg_seq", label = "选项序号,从0开始, 0:A;1:B;2:C.")
 	private String seq = "";
-	
+
 	@Column(name = "leg_vote", label = "投票数")
 	private Integer vote = 0;
 

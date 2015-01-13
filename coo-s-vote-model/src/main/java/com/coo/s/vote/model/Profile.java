@@ -1,14 +1,17 @@
 package com.coo.s.vote.model;
 
+import com.coo.s.cloud.model.BasicObject;
+
 /**
  * 账号用户信息
+ * 
  * @deprecated 参见Account
  */
 
-public class Profile extends BasicObject{
+public class Profile extends BasicObject {
 
-	public static String C_NAME = "vote_account";
-	
+	public static String SET = "vote_profile";
+
 	/**
 	 * 
 	 */
@@ -24,15 +27,15 @@ public class Profile extends BasicObject{
 	/**
 	 * 婚姻状况：未婚
 	 */
-	public static String MARITAL_SINGLE ="0";
+	public static String MARITAL_SINGLE = "0";
 	/**
 	 * 婚姻状况：已婚
 	 */
-	public static String MARITAL_MARRIED ="1";
+	public static String MARITAL_MARRIED = "1";
 	/**
 	 * 关联Account表中的uuid
 	 */
-	private String accountUuid="";
+	private String accountUuid = "";
 	/**
 	 * 类型，精英，屌丝，文艺小青年
 	 */
@@ -48,7 +51,7 @@ public class Profile extends BasicObject{
 	/**
 	 * 昵称
 	 */
-	private String nickname ="";
+	private String nickname = "";
 	/**
 	 * 个人简介
 	 */
@@ -68,7 +71,7 @@ public class Profile extends BasicObject{
 	/**
 	 * 身高
 	 */
-	private String height="";
+	private String height = "";
 	/**
 	 * 体重
 	 */
@@ -108,11 +111,11 @@ public class Profile extends BasicObject{
 	/**
 	 * 等级
 	 */
-	private String grade = "" ;
+	private String grade = "";
 	/**
 	 * 血型
 	 */
-	private String blood = "" ;
+	private String blood = "";
 	/**
 	 * 学历
 	 */
@@ -132,7 +135,7 @@ public class Profile extends BasicObject{
 	/**
 	 * 英文名称
 	 */
-	private String ename = "" ;
+	private String ename = "";
 	/**
 	 * 个性签名
 	 */
@@ -141,7 +144,6 @@ public class Profile extends BasicObject{
 	 * 二维码
 	 */
 	private String qrCode = "";
-	
 
 	public String getType() {
 		return type;
@@ -279,7 +281,6 @@ public class Profile extends BasicObject{
 		this.grade = grade;
 	}
 
-
 	public String getEducation() {
 		return education;
 	}
@@ -320,14 +321,13 @@ public class Profile extends BasicObject{
 		this.ename = ename;
 	}
 
-
-//	public String getUuid() {
-//		return uuid;
-//	}
-//
-//	public void setUuid(String uuid) {
-//		this.uuid = uuid;
-//	}
+	// public String getUuid() {
+	// return uuid;
+	// }
+	//
+	// public void setUuid(String uuid) {
+	// this.uuid = uuid;
+	// }
 
 	public String getAccountUuid() {
 		return accountUuid;
@@ -376,5 +376,5 @@ public class Profile extends BasicObject{
 	public void setWeight(String weight) {
 		this.weight = weight;
 	}
-	
+
 }

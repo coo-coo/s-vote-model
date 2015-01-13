@@ -1,5 +1,8 @@
 package com.coo.s.vote.model;
 
+import com.coo.s.cloud.model.BasicObject;
+import com.coo.s.cloud.model.Column;
+
 /**
  * TODO 企业账号,用于商业行为，类似于Channel,对应Topic为c.firm.xxx
  */
@@ -10,7 +13,7 @@ public class Firm extends BasicObject {
 	 */
 	private static final long serialVersionUID = 1382569918105452854L;
 
-	public static String C_NAME = "vote_firm";
+	public static String SET = "vote_firm";
 
 	/**
 	 * 构造函数

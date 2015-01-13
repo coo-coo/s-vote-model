@@ -8,13 +8,19 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.coo</groupId>
-	<artifactId>coo-s-vote-model</artifactId>
-	<version>0.7.3.0</version>
-	<name>coo-s-vote-model</name>
-	<description>coo-s-vote-model for git</description>
+	<artifactId>coo-s-vote</artifactId>
+	<version>0.8.0.0</version>
+	<name>coo-s-vote</name>
+	<description>coo-s-vote for git</description>
 
 	<dependencies>
 		<!-- 无依赖,不能依赖s-util,M端引用此包 -->
+		<dependency>
+			<groupId>com.coo</groupId>
+			<artifactId>coo-s-cloud</artifactId>
+			<version>1.0.0.0</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 
 </project>

@@ -3,6 +3,9 @@ package com.coo.s.vote.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.coo.s.cloud.model.BasicObject;
+import com.coo.s.cloud.model.Column;
+
 /**
  * Topic的快照模型，就是一个Topic Topic(0) + Vote(*) + Topic(1)
  * 
@@ -11,7 +14,7 @@ import java.util.List;
  */
 public class Topic extends BasicObject {
 
-	public static String C_NAME = "vote_topic";
+	public static String SET = "vote_topic";
 
 	/**
 	 * 
@@ -33,9 +36,9 @@ public class Topic extends BasicObject {
 	@Column(name = "channels", label = "所属频道tiyu,yinyue")
 	private String channels = null;
 
-	public static int STATUS_VALID = 0;// new Status(0, "有效");
-	public static int STATUS_LOCKED = 5;// new Status(5, "锁定");
-	public static int STATUS_INVALID = 9;// new Status(9, "无效");
+	public static String STATUS_VALID = "0";// new Status(0, "有效");
+	public static String STATUS_LOCKED = "5";// new Status(5, "锁定");
+	public static String STATUS_INVALID = "9";// new Status(9, "无效");
 
 	/**
 	 * 判断Topic的一个实例，是否是和一个账号进行了绑定，即账号已经投过Topic了 采用Focus来描述投票关系式，类型是:VOTE

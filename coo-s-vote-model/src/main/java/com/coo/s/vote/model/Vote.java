@@ -1,5 +1,8 @@
 package com.coo.s.vote.model;
 
+import com.coo.s.cloud.model.BasicObject;
+import com.coo.s.cloud.model.Column;
+
 /**
  * 投票对象，一个Topic对一个Account进行了一次投票
  * 
@@ -11,7 +14,7 @@ package com.coo.s.vote.model;
 
 public class Vote extends BasicObject {
 
-	public static String C_NAME = "vote_vote";
+	public static String SET = "vote_vote";
 
 	private static final long serialVersionUID = -2410079737542400586L;
 
@@ -24,15 +27,15 @@ public class Vote extends BasicObject {
 	@Column(name = "voter", label = "投票人账号")
 	private String voter = "";
 
-	public final static int STATUS_VALID = 0;//new Status(0, "有效");
+	public final static int STATUS_VALID = 0;// new Status(0, "有效");
 
-	public final static int STATUS_COUNTED = 5;//new Status(5, "已统计");
+	public final static int STATUS_COUNTED = 5;// new Status(5, "已统计");
 
-	public final static int STATUS_INVALID = 9;//new Status(9, "无效");
+	public final static int STATUS_INVALID = 9;// new Status(9, "无效");
 
-//	protected Status[] getStatusArray() {
-//		return new Status[] { STATUS_VALID, STATUS_INVALID, STATUS_INVALID };
-//	}
+	// protected Status[] getStatusArray() {
+	// return new Status[] { STATUS_VALID, STATUS_INVALID, STATUS_INVALID };
+	// }
 
 	public String getLegSeq() {
 		return legSeq;
